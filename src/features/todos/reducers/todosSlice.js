@@ -22,10 +22,26 @@ const todosSlice = createSlice (
     {
         name: "todos",
         initialState: initialState,
-        reducers: {}
+        reducers: {
+
+            AddTodo(state, action) {
+                todosAdapter.addOne (
+                    state,
+                    {
+                        id: "5",
+                        text: action.payload,
+                        done: false
+                    }
+                )
+                return state;
+            }
+
+        }
     }
 
 );
+
+export const {AddTodo} = todosSlice.actions;
 
 export default todosSlice.reducer;
 

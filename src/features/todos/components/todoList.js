@@ -1,16 +1,15 @@
 import React from 'react'
-import todoForm from './todoForm'
+import TodoForm from './TodoForm'
 import TodoGroup from './TodoGroup'
 
-function todoList() {
+function TodoList() {
     return (
         <div>
             <h1>Todo List</h1>
-            <TodoGroup/>
-            <todoForm/>
-            
+            <TodoGroup></TodoGroup>
+            <TodoForm></TodoForm>
         </div>
     )
 }
 
-export default todoList
+export default TodoList
