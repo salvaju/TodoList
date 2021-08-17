@@ -1,7 +1,8 @@
 .todos {
+    border-radius: 25px;
     border-style: solid;
     margin-left: 40%;
     margin-right: 40%;
     text-align: left;
-    padding-left: 10px;
+    padding-left: 18px;
 }
