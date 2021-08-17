@@ -1,8 +1,8 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { initialTodoList } from "../../../common/constants/constants";
 import { getTodoById } from "../../../common/utils/utils";
-import { selectTodoById } from '../reducers/todosSlice';
+import { selectTodoById, ToggleTodo } from '../reducers/todosSlice';
 
 function TodoItem(props) {
 
@@ -11,8 +11,14 @@ function TodoItem(props) {
         (state) => selectTodoById(state, props.itemId)
     )
 
+    const dispatch = useDispatch();
+
+    function handleClick() {
+        dispatch(ToggleTodo(props.itemId))
+    }
+
     return (
-        <div>
+        <div on onClick = {handleClick}>
             {todo.text}
         </div>
     );
