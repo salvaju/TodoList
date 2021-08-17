@@ -14,7 +14,11 @@ function TodoForm() {
     }
 
     function handleAdd(){
-        dispatch(AddTodo(text));
+
+        if(text !== "") {
+            dispatch(AddTodo(text));
+        }
+        
     }
 
 
