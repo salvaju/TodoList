@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { initialTodoList } from "../../../common/constants/constants";
 import { getTodoById } from "../../../common/utils/utils";
 import { selectTodoById, ToggleTodo } from '../reducers/todosSlice';
+import "../styles/TodoItem.css";
 
 function TodoItem(props) {
 
@@ -13,12 +14,16 @@ function TodoItem(props) {
 
     const dispatch = useDispatch();
 
+    const todoStatus = todo.done ? "done" : ""
+
     function handleClick() {
         dispatch(ToggleTodo(props.itemId))
     }
 
+
+
     return (
-        <div on onClick = {handleClick}>
+        <div className = {`TodoItem-todo ${todoStatus}`} on onClick = {handleClick}>
             {todo.text}
         </div>
     );
