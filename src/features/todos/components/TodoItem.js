@@ -24,7 +24,7 @@ function TodoItem(props) {
 
     return (
         <div className = {`TodoItem-todo ${todoStatus}`} on onClick = {handleClick}>
-            {todo.text}
+            {todo.text}  <span className = "remove">X</span>
         </div>
     );
 }
