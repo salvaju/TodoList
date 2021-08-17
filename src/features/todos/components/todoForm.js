@@ -17,6 +17,7 @@ function TodoForm() {
 
         if(text !== "") {
             dispatch(AddTodo(text));
+            setText("");
         }
         
     }
