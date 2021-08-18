@@ -4,7 +4,7 @@ import { initialTodoList } from "../../../common/constants/constants";
 import { getTodoById } from "../../../common/utils/utils";
 import { selectTodoById, ToggleTodo, RemoveTodo} from '../reducers/todosSlice';
 import "../styles/TodoItem.css";
-import {updateTodo} from '../../apis/todos';
+import {updateTodo, deleteTodo} from '../../apis/todos';
 
 function TodoItem(props) {
 
@@ -26,7 +26,11 @@ function TodoItem(props) {
 
     function handleRemove(event) {
         event.stopPropagation();
-        dispatch(RemoveTodo(props.itemId))
+
+        deleteTodo(todo.id).then((response) => {
+            console.log("response: ", response);
+            dispatch(RemoveTodo(todo.id));
+        })
     }
 
     return (
