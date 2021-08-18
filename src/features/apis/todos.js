@@ -8,4 +8,9 @@ const createTodo = (text) => {
     return api.post("/todos", {text})
 }
 
-export {createTodo, getTodos}
+const updateTodo = (id, done) => {
+    return api.put(`/todos/%{id}`, {done})
+}
+
+
+export {createTodo, getTodos, updateTodo}
