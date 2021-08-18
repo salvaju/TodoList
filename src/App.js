@@ -33,13 +33,13 @@ function App() {
                 mode="inline">
 
         <SubMenu key="sub1" icon={<BarsOutlined />} title="Navigation">
-            <Menu.Item key="1"><Link to = "/s">Todo List</Link></Menu.Item>
+            <Menu.Item key="1"><Link to = "/todos">Todo List</Link></Menu.Item>
             <Menu.Item key="2"><Link to = "/done">Done Todo List</Link></Menu.Item>
         </SubMenu>
       </Menu></div>
               
         <Switch>
-          <Route exact path = "/s" component = {TodoList}></Route>
+          <Route exact path = "/todos" component = {TodoList}></Route>
           <Route exact path = "/done" component = {DoneTodoList}></Route>
         </Switch>
       </BrowserRouter>
