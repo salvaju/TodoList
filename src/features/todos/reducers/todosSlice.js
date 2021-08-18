@@ -27,12 +27,7 @@ const todosSlice = createSlice (
 
             AddTodo(state, action) {
                 todosAdapter.addOne (
-                    state,
-                    {
-                        id: uuid(),
-                        text: action.payload,
-                        done: false
-                    }
+                    state, action.payload
                 )
                 return state;
             },

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from "react-redux";
 import "../styles/TodoForm.css";
 import { AddTodo } from "../reducers/todosSlice";
+import { createTodo } from "../../apis/todos"
 
 function TodoForm() {
 
@@ -16,8 +17,11 @@ function TodoForm() {
     function handleAdd(){
 
         if(text !== "") {
-            dispatch(AddTodo(text));
-            setText("");
+           createTodo(text).then((response) => {
+               dispatch(AddTodo(response.data));
+           });
+
+           setText("");
         }
         
     }

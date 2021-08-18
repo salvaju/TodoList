@@ -4,4 +4,8 @@ const getTodos = () => {
     return api.get("/todos");
 }
 
-export default getTodos;
+const createTodo = (text) => {
+    return api.post("/todos", {text})
+}
+
+export {createTodo, getTodos}

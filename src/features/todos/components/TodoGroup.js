@@ -3,7 +3,7 @@ import TodoItem from './TodoItem'
 import { useDispatch, useSelector } from 'react-redux';
 import { addTodos, selectTodoIds } from '../reducers/todosSlice';
 import "../styles/TodoGroup.css"
-import getTodos from "../../apis/todos"
+import {getTodos} from "../../apis/todos"
 
 function TodoGroup() {
 
