@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import "../styles/TodoForm.css";
 import { AddTodo } from "../reducers/todosSlice";
 import { createTodo } from "../../apis/todos"
+import { Button } from 'antd';
 
 function TodoForm() {
 
@@ -30,7 +31,7 @@ function TodoForm() {
     return (
         <div className = "form">
             <input className = "inputBox" type = "text" placeholder = "Add a new todo." value = {text} onChange = {changeHandler}></input>
-            <button className = "buttow" onClick = {handleAdd}>add</button>
+            <Button className = "buttow" onClick = {handleAdd}>Add</Button>
         </div>
     )
 
