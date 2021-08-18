@@ -3,15 +3,41 @@ import './App.css';
 import TodoList from './features/todos/components/TodoList';
 import DoneTodoList from './features/todos/components/DoneTodoList';
 import {Route, BrowserRouter, Switch, Link} from "react-router-dom";
+import { Menu } from 'antd';
+import {BarsOutlined} from '@ant-design/icons'
 
 function App() {
+
+  const { SubMenu } = Menu;
+
+ const handleClick = e => {
+    console.log('click ', e);
+  };
+
+  
+
   return (
     <div className="App">
+
+
+      
+
+      
+
+
+
       <BrowserRouter>
-        <ul>
-          <Link to = "/s">Go to the todo list page</Link>
-          <Link to = "/done">Go to the Done to do list</Link>
-        </ul>
+      <div className = 'menu'><Menu
+                onClick={handleClick}
+                style={{ width: 256 }}
+                mode="inline">
+
+        <SubMenu key="sub1" icon={<BarsOutlined />} title="Navigation">
+            <Menu.Item key="1"><Link to = "/s">Todo List</Link></Menu.Item>
+            <Menu.Item key="2"><Link to = "/done">Done Todo List</Link></Menu.Item>
+        </SubMenu>
+      </Menu></div>
+              
         <Switch>
           <Route exact path = "/s" component = {TodoList}></Route>
           <Route exact path = "/done" component = {DoneTodoList}></Route>

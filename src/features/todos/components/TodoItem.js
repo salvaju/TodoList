@@ -5,6 +5,7 @@ import { getTodoById } from "../../../common/utils/utils";
 import { selectTodoById, ToggleTodo, RemoveTodo} from '../reducers/todosSlice';
 import "../styles/TodoItem.css";
 import {updateTodo, deleteTodo} from '../../apis/todos';
+import {DeleteOutlined} from '@ant-design/icons'
 
 function TodoItem(props) {
 
@@ -35,7 +36,7 @@ function TodoItem(props) {
 
     return (
         <div className = {`TodoItem-todo ${todoStatus}`} on onClick = {handleClick}>
-            {todo.text}  <span className = "remove" onClick = {handleRemove}> X</span>
+            {todo.text} <DeleteOutlined className = "remove" onClick = {handleRemove} />  
         </div>
     );
 }
