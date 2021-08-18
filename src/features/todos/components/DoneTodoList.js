@@ -1,6 +1,8 @@
 import React from 'react'
 import { selectDoneList } from '../reducers/todosSlice'
 import { useSelector } from 'react-redux';
+import { Card } from 'antd';
+import "../styles/doneTodo.css"
 
 
 
@@ -11,10 +13,11 @@ function DoneTodoList() {
 
 
     return (
-        <div>
-            <h1>Done to do List!</h1>
+        <div className = 'card'>
             {/*console.log("todos, ", todos[0].text)*/}
-            {todos.map((todo) =>  <h4>{todo.text}</h4>)}
+            <Card title="Done Todo List" style={{ width: 300 }}>
+            {todos.map((todo) =>  <div>{todo.text}</div>)}
+            </Card>
         </div>
     )
 }
