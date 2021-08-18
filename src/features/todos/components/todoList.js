@@ -5,7 +5,7 @@ import TodoGroup from './TodoGroup'
 function TodoList() {
     return (
         <div>
-            <h1>Todo List</h1>
+            <h1>Hello, User!</h1>
             <TodoGroup></TodoGroup>
             <TodoForm></TodoForm>
         </div>

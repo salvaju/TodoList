@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addTodos, selectTodoIds } from '../reducers/todosSlice';
 import "../styles/TodoGroup.css"
 import {getTodos} from "../../apis/todos"
+import { Card } from 'antd';
 
 function TodoGroup() {
 
@@ -21,9 +22,10 @@ function TodoGroup() {
     return (
         <div className = "todos">
 
-            {
-                todoIds.map((id) => (<TodoItem key = {id} itemId = {id}/>))
-            } 
+
+    <Card title="Todo List" style={{ width: 300 }}>
+      {todoIds.map((id) => (<TodoItem key = {id} itemId = {id}/>))}
+    </Card>
 
         </div>
     )
