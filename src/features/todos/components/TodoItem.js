@@ -4,6 +4,7 @@ import { initialTodoList } from "../../../common/constants/constants";
 import { getTodoById } from "../../../common/utils/utils";
 import { selectTodoById, ToggleTodo, RemoveTodo} from '../reducers/todosSlice';
 import "../styles/TodoItem.css";
+import {updateTodo} from '../../apis/todos';
 
 function TodoItem(props) {
 
@@ -17,15 +18,16 @@ function TodoItem(props) {
     const todoStatus = todo.done ? "done" : ""
 
     function handleClick() {
-        dispatch(ToggleTodo(props.itemId))
+        updateTodo(props.itemId, {done: !todo.done}).then((response) => {
+            console.log("response: ", response);
+            dispatch(ToggleTodo({id: props.itemId, updateTodo: response.data}));
+        });
     }
 
     function handleRemove(event) {
         event.stopPropagation();
         dispatch(RemoveTodo(props.itemId))
     }
-
-
 
     return (
         <div className = {`TodoItem-todo ${todoStatus}`} on onClick = {handleClick}>

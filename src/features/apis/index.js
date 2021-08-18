@@ -2,7 +2,7 @@ import axios from "axios";
 
 const api = axios.create(
     {
-        baseURL: 'https://5d6f7991482b530014d2e376.mockapi.io/api'
+        baseURL: 'https://611d0f157d273a0017e2f5f3.mockapi.io/'
     }
 );
 

@@ -33,8 +33,10 @@ const todosSlice = createSlice (
             },
 
             ToggleTodo(state, action) {
-                const todo = state.entities[action.payload]
-                todo.done = !todo.done;
+                todosAdapter.updateOne(state, {
+                    id: action.payload.id,
+                    changes: action.payload.updateTodo
+                })
             },
 
             RemoveTodo(state, action) {
