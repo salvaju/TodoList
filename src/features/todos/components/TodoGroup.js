@@ -1,14 +1,22 @@
-import React from 'react'
+import {React, useEffect} from 'react'
 import TodoItem from './TodoItem'
-import { initialTodoList } from "../../../common/constants/constants";
-import { getAllTodoIds } from "../../../common/utils/utils";
-import { useSelector } from 'react-redux';
-import { selectTodoIds } from '../reducers/todosSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { addTodos, selectTodoIds } from '../reducers/todosSlice';
 import "../styles/TodoGroup.css"
+import getTodos from "../../apis/todos"
 
 function TodoGroup() {
 
     const todoIds = useSelector(selectTodoIds)
+    const dispatch = useDispatch();
+    
+    useEffect(() => {
+
+        getTodos().then((response) => {
+            dispatch(addTodos(response.data));
+        })
+
+    }, [])
 
     return (
         <div className = "todos">
