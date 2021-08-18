@@ -3,9 +3,11 @@ import { useDispatch } from "react-redux";
 import "../styles/TodoForm.css";
 import { AddTodo } from "../reducers/todosSlice";
 import { createTodo } from "../../apis/todos"
-import { Button } from 'antd';
+import { Button, Input, Search } from 'antd';
 
 function TodoForm() {
+
+    const { Search } = Input;
 
     const dispatch = useDispatch();
 
@@ -26,12 +28,18 @@ function TodoForm() {
         }
         
     }
-
-
     return (
         <div className = "form">
-            <input className = "inputBox" type = "text" placeholder = "Add a new todo." value = {text} onChange = {changeHandler}></input>
-            <Button className = "buttow" onClick = {handleAdd}>Add</Button>
+            
+            <Search
+                placeholder="Add a new todo."
+                allowClear
+                enterButton="Add Todo"
+                size="large"
+                value = {text}
+                onChange={changeHandler}
+                onSearch={handleAdd}
+            />
         </div>
     )
 
