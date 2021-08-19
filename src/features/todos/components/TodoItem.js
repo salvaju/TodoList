@@ -72,11 +72,7 @@ function TodoItem(props) {
             <DeleteOutlined className = "remove" onClick = {handleRemove}/>
 
             <Modal title = 'Edit Todo' visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                        <TextArea
-                            placeholder = {todo.text}
-                            value = {todoText}
-                            onChange = {handleSetTodoText}
-                        />
+                        <TextArea placeholder = {todo.text} value = {todoText}onChange = {handleSetTodoText}/>
             </Modal>
 
         </div> 
