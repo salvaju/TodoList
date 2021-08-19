@@ -67,7 +67,7 @@ function TodoItem(props) {
     return (
         <div className = {`TodoItem-todo ${todoStatus}`}>
 
-            <FormOutlined className = "update" onClick = {openModal}/>
+            <FormOutlined className = "update" onClick = {openModal} style= {todo.done ? {display: 'none'} : {}}/>
             <span onClick = {handleClick}> {todo.text} </span>
             <DeleteOutlined className = "remove" onClick = {handleRemove}/>
 
