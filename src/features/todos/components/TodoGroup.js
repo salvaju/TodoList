@@ -17,7 +17,7 @@ function TodoGroup() {
             dispatch(addTodos(response.data));
         })
 
-    }, [])
+    }, [dispatch])
 
     return (
         <div className = "todos">

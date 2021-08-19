@@ -4,5 +4,9 @@
 
 .remove {
     float: right;
-    padding-right: 18px;
+    padding-right: 7px;
+}
+
+.update {
+    float: right;
 }

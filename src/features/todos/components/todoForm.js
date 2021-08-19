@@ -21,6 +21,7 @@ function TodoForm() {
 
         if(text !== "") {
            createTodo(text).then((response) => {
+               console.log("response: ", response);
                dispatch(AddTodo(response.data));
            });
 
